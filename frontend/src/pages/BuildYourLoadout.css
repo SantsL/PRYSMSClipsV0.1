@@ -1,0 +1,546 @@
+.build-your-loadout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loadout-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loadout-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.loadout-header p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+.loadout-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background-color: #1e293b;
+  padding: 15px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #334155;
+  margin: 0 5px;
+  color: #cbd5e1;
+  position: relative;
+}
+
+.step.active {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: bold;
+}
+
+.step.completed {
+  background-color: #10b981;
+  color: white;
+}
+
+.step.completed::after {
+  content: "✓";
+  margin-left: 5px;
+}
+
+.loadout-content {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 500px;
+}
+
+/* Estilos para WeaponSelector */
+.weapon-selector h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.weapon-filters {
+  display: flex;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.weapon-filters button {
+  background-color: #334155;
+  color: #cbd5e1;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.weapon-filters button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.weapons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.weapon-card {
+  background-color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.weapon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.weapon-image {
+  height: 150px;
+  background-color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weapon-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.weapon-info {
+  padding: 15px;
+}
+
+.weapon-info h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.2rem;
+}
+
+.weapon-type {
+  display: inline-block;
+  background-color: #4f46e5;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
+/* Estilos para SkinCustomizer */
+.skin-customizer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.customizer-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.customizer-tabs button {
+  background-color: #334155;
+  color: #cbd5e1;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 5px;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.customizer-tabs button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.preview-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.skin-preview {
+  width: 300px;
+  height: 200px;
+  background-color: #475569;
+  border: 3px solid #f8fafc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.skin-preview img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.sticker-positions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sticker-position {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticker-position img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.position-0 { top: 10px; left: 10px; }
+.position-1 { top: 10px; right: 10px; }
+.position-2 { bottom: 10px; left: 10px; }
+.position-3 { bottom: 10px; right: 10px; }
+
+.customization-options {
+  margin-top: 20px;
+}
+
+.skins-grid, .stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skin-card, .sticker-card {
+  background-color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.skin-card:hover, .sticker-card:hover {
+  transform: translateY(-3px);
+}
+
+.skin-card.selected {
+  border: 2px solid #4f46e5;
+}
+
+.skin-image, .sticker-image {
+  height: 100px;
+  background-color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skin-image img, .sticker-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.skin-info, .sticker-info {
+  padding: 10px;
+}
+
+.skin-info h3, .sticker-info h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skin-rarity, .sticker-rarity {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+
+.rarity-covert { background-color: #ef4444; color: white; }
+.rarity-classified { background-color: #8b5cf6; color: white; }
+.rarity-restricted { background-color: #3b82f6; color: white; }
+.rarity-exotic { background-color: #f59e0b; color: white; }
+.rarity-remarkable { background-color: #10b981; color: white; }
+.rarity-extraordinary { background-color: #ec4899; color: white; }
+
+.colors-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.color-picker input[type="color"] {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.color-value {
+  font-family: monospace;
+  color: #f8fafc;
+}
+
+.predefined-colors h3 {
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch.selected {
+  border: 2px solid white;
+}
+
+.customizer-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #4338ca;
+}
+
+.save-button:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Estilos para LoadoutVoting */
+.loadout-voting h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.voting-filters {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.voting-filters button {
+  background-color: #334155;
+  color: #cbd5e1;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.voting-filters button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.loadouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.loadout-card {
+  background-color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.loadout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.loadout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #475569;
+}
+
+.loadout-header h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.1rem;
+}
+
+.votes-count {
+  background-color: #4f46e5;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.loadout-preview {
+  height: 180px;
+  background-color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+}
+
+.loadout-image-placeholder {
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+}
+
+.loadout-actions {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+}
+
+.vote-button, .share-button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+.vote-button {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.vote-button:hover {
+  background-color: #4338ca;
+}
+
+.share-button {
+  background-color: #475569;
+  color: #f8fafc;
+}
+
+.share-button:hover {
+  background-color: #64748b;
+}
+
+.your-loadout-section {
+  margin-bottom: 40px;
+  background-color: #334155;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.your-loadout-section h2 {
+  color: #f8fafc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.loadout-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-button:hover {
+  background-color: #059669;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .loadout-steps {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .step {
+    margin: 0;
+  }
+  
+  .weapons-grid, .skins-grid, .stickers-grid, .loadouts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  
+  .color-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

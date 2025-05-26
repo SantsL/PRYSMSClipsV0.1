@@ -1,0 +1,1323 @@
+.clan-system {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(79, 70, 229, 0.2);
+  border-radius: 50%;
+  border-top-color: #4f46e5;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Clan Header */
+.clan-header {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.clan-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+}
+
+.clan-header-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  color: white;
+}
+
+.clan-emblem {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.clan-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clan-info {
+  flex-grow: 1;
+}
+
+.clan-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.clan-tag {
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.clan-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.clan-meta i {
+  margin-right: 5px;
+}
+
+.clan-role {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.role {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.role.leader {
+  background-color: #fcd34d;
+  color: #92400e;
+}
+
+.role.officer {
+  background-color: #93c5fd;
+  color: #1e40af;
+}
+
+.role.member {
+  background-color: #a7f3d0;
+  color: #065f46;
+}
+
+/* Navigation */
+.clan-navigation {
+  display: flex;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.nav-item {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: #f3f4f6;
+  color: #4f46e5;
+}
+
+.nav-item.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.nav-item i {
+  margin-right: 8px;
+}
+
+/* Content Container */
+.clan-content-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Overview Tab */
+.clan-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clan-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.stat-card {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 10px 0;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #4f46e5;
+  border-radius: 4px;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.clan-description {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.clan-description h3 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #111827;
+}
+
+.clan-description p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.clan-activity {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.clan-activity h3 {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  color: #111827;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.activity-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.activity-content {
+  flex-grow: 1;
+}
+
+.activity-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Members Tab */
+.clan-members {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.members-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.members-header h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #111827;
+}
+
+.invite-button {
+  display: flex;
+  align-items: center;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.invite-button:hover {
+  background-color: #4338ca;
+}
+
+.invite-button i {
+  margin-right: 8px;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.member-item:hover {
+  background-color: #f3f4f6;
+}
+
+.member-item.leader {
+  border-left: 4px solid #fcd34d;
+}
+
+.member-item.officer {
+  border-left: 4px solid #93c5fd;
+}
+
+.member-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.member-info {
+  flex-grow: 1;
+}
+
+.member-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.member-role {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.member-stats {
+  display: flex;
+  gap: 15px;
+  margin-right: 15px;
+}
+
+.member-stat {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.member-stat i {
+  margin-right: 5px;
+}
+
+.member-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.member-status.online {
+  background-color: #10b981;
+}
+
+.member-status.offline {
+  background-color: #e5e7eb;
+}
+
+/* Content Tab */
+.clan-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.content-header h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #111827;
+}
+
+.content-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.filter-button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.content-card {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+.content-thumbnail {
+  position: relative;
+  height: 160px;
+}
+
+.content-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.content-card:hover .content-overlay {
+  opacity: 1;
+}
+
+.content-overlay i {
+  font-size: 40px;
+  color: white;
+}
+
+.content-info {
+  padding: 12px;
+}
+
+.content-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.content-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.content-author {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-stats {
+  display: flex;
+  align-items: center;
+}
+
+.content-stats i {
+  margin-right: 5px;
+}
+
+/* Settings Tab */
+.clan-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.clan-settings h3 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  color: #111827;
+}
+
+.settings-section {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.settings-section h4 {
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  color: #111827;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.emblem-upload,
+.banner-upload {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-emblem {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.current-banner {
+  width: 200px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.upload-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.upload-button:hover {
+  background-color: #4338ca;
+}
+
+.color-pickers {
+  display: flex;
+  gap: 20px;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.color-picker span {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #4338ca;
+}
+
+.danger-zone {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.danger-zone h4 {
+  color: #ef4444;
+}
+
+.danger-zone p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.danger-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.danger-button:hover {
+  background-color: #dc2626;
+}
+
+.member-options {
+  text-align: center;
+  padding: 20px;
+}
+
+.leave-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.leave-button:hover {
+  background-color: #dc2626;
+}
+
+/* No Clan Container */
+.no-clan-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.no-clan-header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.no-clan-header h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  color: #111827;
+}
+
+.no-clan-header p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.clan-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.option-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.option-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #eef2ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.option-icon i {
+  font-size: 24px;
+  color: #4f46e5;
+}
+
+.option-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #111827;
+}
+
+.option-card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+}
+
+.search-container button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  padding: 0 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-container button:hover {
+  background-color: #4338ca;
+}
+
+.search-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading-spinner.small {
+  width: 20px;
+  height: 20px;
+  border-width: 3px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.search-results {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clan-result {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.result-emblem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.result-info {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.result-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.join-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.join-button:hover {
+  background-color: #4338ca;
+}
+
+.join-button.pending {
+  background-color: #9ca3af;
+  cursor: default;
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.benefits-list li i {
+  color: #10b981;
+  margin-right: 10px;
+}
+
+.create-clan-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.create-clan-button:hover {
+  background-color: #4338ca;
+}
+
+.cost-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.cost-note i {
+  margin-right: 5px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.create-clan-modal {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #111827;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.modal-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.progress-step.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.progress-line {
+  height: 2px;
+  width: 60px;
+  background-color: #e5e7eb;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #111827;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 5px 0 0 0;
+}
+
+.emblem-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.emblem-placeholder i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.emblem-placeholder span {
+  font-size: 12px;
+  text-align: center;
+}
+
+.preview-emblem {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.color-preview {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.preview-header {
+  padding: 10px;
+  background-color: #f3f4f6;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  text-align: center;
+}
+
+.preview-content {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-tag {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.clan-preview {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.preview-header {
+  padding: 15px;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.preview-tag {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.preview-emblem {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.preview-emblem img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.default-emblem {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+
+.preview-description {
+  padding: 0 20px 20px;
+  color: #4b5563;
+  text-align: center;
+}
+
+.preview-colors {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.color-sample {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.cost-info {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.cost-info h4 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #111827;
+}
+
+.cost-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cost-amount i {
+  margin-right: 8px;
+}
+
+.cost-note {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.back-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #e5e7eb;
+}
+
+.next-button,
+.create-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.next-button:hover,
+.create-button:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clan-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .clan-emblem {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .clan-role {
+    position: static;
+    margin-top: 15px;
+  }
+  
+  .clan-navigation {
+    flex-wrap: wrap;
+  }
+  
+  .nav-item {
+    flex: 1 0 50%;
+  }
+  
+  .clan-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .clan-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .color-pickers {
+    flex-direction: column;
+  }
+}

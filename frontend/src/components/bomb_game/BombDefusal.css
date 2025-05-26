@@ -1,0 +1,239 @@
+.bomb-defusal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bomb-container {
+  background-color: #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.bomb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bomb-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #f8fafc;
+  background: linear-gradient(90deg, #ff4d4d, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.difficulty-badge {
+  background-color: #4f46e5;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.time-bar-container {
+  height: 10px;
+  background-color: #334155;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.time-bar {
+  height: 100%;
+  transition: width 1s linear, background-color 1s;
+}
+
+.time-display {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8fafc;
+  margin-bottom: 20px;
+}
+
+.sequence-display {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sequence-display p {
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.sequence-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sequence-char {
+  width: 40px;
+  height: 40px;
+  background-color: #334155;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: #f8fafc;
+  border: 1px solid #475569;
+}
+
+.input-display {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-char {
+  width: 40px;
+  height: 40px;
+  background-color: #475569;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: monospace;
+  color: #f8fafc;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.input-char.current {
+  border-color: #4f46e5;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+}
+
+.input-char.correct {
+  background-color: #10b981;
+  color: white;
+}
+
+.input-char.incorrect {
+  background-color: #ef4444;
+  color: white;
+}
+
+.virtual-keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.key-button {
+  width: 40px;
+  height: 40px;
+  background-color: #334155;
+  border: none;
+  border-radius: 4px;
+  color: #f8fafc;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.key-button:hover {
+  background-color: #4f46e5;
+}
+
+.key-button:active {
+  transform: scale(0.95);
+}
+
+.start-screen, .result-screen {
+  text-align: center;
+  padding: 30px;
+}
+
+.start-screen p, .result-screen p {
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+.start-button, .play-again-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.start-button:hover, .play-again-button:hover {
+  background-color: #4338ca;
+}
+
+.stop-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin: 0 auto;
+  display: block;
+}
+
+.stop-button:hover {
+  background-color: #dc2626;
+}
+
+.result-screen h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.result-screen.success h3 {
+  color: #10b981;
+}
+
+.result-screen.failure h3 {
+  color: #ef4444;
+}
+
+/* Animações */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.result-screen h3 {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sequence-char, .input-char, .key-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .virtual-keyboard {
+    gap: 3px;
+  }
+  
+  .bomb-header h2 {
+    font-size: 1.5rem;
+  }
+}

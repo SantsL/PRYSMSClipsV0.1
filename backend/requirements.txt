@@ -1,0 +1,6 @@
+flask==2.2.3
+flask-socketio==5.3.2
+flask-login==0.6.2
+sqlalchemy==2.0.4
+pillow==9.4.0
+python-dotenv==1.0.0

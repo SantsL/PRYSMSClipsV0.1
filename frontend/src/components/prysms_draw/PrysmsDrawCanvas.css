@@ -1,0 +1,126 @@
+.prysms-draw-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.drawing-canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  cursor: crosshair;
+  touch-action: none; /* Prevenir comportamentos padrão de toque */
+}
+
+.drawing-tools {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(30, 41, 59, 0.9);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.tool-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-button {
+  background-color: #334155;
+  color: #cbd5e1;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tool-button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.brush-size {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.brush-size span {
+  color: #f8fafc;
+  font-size: 0.9rem;
+}
+
+.brush-size input {
+  width: 80px;
+}
+
+input[type="color"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clear-button:hover {
+  background-color: #dc2626;
+}
+
+.read-only-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.read-only-overlay p {
+  background-color: rgba(30, 41, 59, 0.8);
+  color: #f8fafc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .drawing-tools {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+  }
+  
+  .tool-group {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .prysms-draw-canvas-container {
+    height: 300px;
+  }
+}
