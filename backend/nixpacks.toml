@@ -1,2 +1,8 @@
+# backend/nixpacks.toml
 [phases.setup]
-nixPkgs = ["python311", "libjpeg", "zlib", "gcc", "gnumake", "pkg-config"]
+# Instala dependências do sistema necessárias para Pillow e outras libs
+aptPkgs = ["libjpeg-dev", "zlib1g-dev", "libwebp-dev", "libtiff-dev", "liblcms2-dev", "libopenjp2-7-dev", "libfreetype6-dev", "tk-dev", "tcl-dev", "harfbuzz-dev", "fribidi-dev"]
+
+[start]
+# Usa o socketio.run() dentro do seu main.py (não usar gunicorn nesse caso)
+cmd = "python src/main.py"
