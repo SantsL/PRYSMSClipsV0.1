@@ -10,7 +10,7 @@ eventlet
 Pillow
 stripe
 PyMySQL # Ou psycopg2-binary se você usar PostgreSQL
-Werkzeug
+werkzeug==2.3.7
 Jinja2
 itsdangerous
 click
