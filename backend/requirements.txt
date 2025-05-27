@@ -3,6 +3,7 @@ Flask-SocketIO
 Flask-SQLAlchemy
 Flask-Migrate
 Flask-Cors
+flask-login==0.6.2
 python-dotenv
 gunicorn
 eventlet
